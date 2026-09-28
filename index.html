@@ -5,406 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NFA Masterclass — Structurer votre activité d'artiste</title>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<!DOCTYPE html>
-    <html lang="fr">
-        <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>NFA Masterclass — Structurer votre activité d'artiste</title>
-            <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-            <style>
-                    * {
-                                    margin: 0;
-                                    padding: 0;
-                                    box-sizing: border-box;
-                    }
-            
-                    body {
-                                    font-family: 'Inter', sans-serif;
-                                    background-color: #F6F3EB;
-                                    color: #15182A;
-                                    line-height: 1.6;
-                    }
-            
-                    .container {
-                                    max-width: 1080px;
-                                    margin: 0 auto;
-                                    padding: 0 20px;
-                    }
-            
-                    /* Header */
-                    header {
-                                    background: linear-gradient(135deg, #0033CC 0%, #15182A 100%);
-                                    color: #F6F3EB;
-                                    padding: 60px 20px;
-                                    text-align: center;
-                    }
-            
-                    header h1 {
-                                    font-family: 'Fraunces', serif;
-                                    font-size: 48px;
-                                    margin-bottom: 16px;
-                                    font-weight: 700;
-                    }
-            
-                    header p {
-                                    font-size: 18px;
-                                    opacity: 0.95;
-                                    max-width: 600px;
-                                    margin: 0 auto;
-                    }
-            
-                    /* Logo */
-                    .logo {
-                                    width: 60px;
-                                    height: auto;
-                                    margin: 0 auto 24px;
-                                    display: block;
-                    }
-            
-                    /* Sessions Grid */
-                    .sessions {
-                                    display: grid;
-                                    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                                    gap: 32px;
-                                    margin: 80px 0;
-                    }
-            
-                    .session-card {
-                                    background: white;
-                                    border-radius: 8px;
-                                    padding: 40px 28px;
-                                    border-top: 4px solid #0033CC;
-                                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-                                    transition: transform 0.3s, box-shadow 0.3s;
-                    }
-            
-                    .session-card:hover {
-                                    transform: translateY(-4px);
-                                    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-                    }
-            
-                    .session-number {
-                                    font-family: 'Fraunces', serif;
-                                    font-size: 14px;
-                                    color: #0033CC;
-                                    font-weight: 600;
-                                    margin-bottom: 8px;
-                                    text-transform: uppercase;
-                                    letter-spacing: 1px;
-                    }
-            
-                    .session-card h3 {
-                                    font-family: 'Fraunces', serif;
-                                    font-size: 24px;
-                                    margin-bottom: 16px;
-                                    color: #15182A;
-                    }
-            
-                    .session-meta {
-                                    font-size: 13px;
-                                    color: #666;
-                                    margin-bottom: 20px;
-                                    line-height: 1.8;
-                    }
-            
-                    .session-meta strong {
-                                    color: #15182A;
-                                    font-weight: 600;
-                    }
-            
-                    .session-description {
-                                    font-size: 14px;
-                                    color: #444;
-                                    margin-bottom: 24px;
-                                    line-height: 1.7;
-                    }
-            
-                    .session-price {
-                                    font-family: 'Fraunces', serif;
-                                    font-size: 32px;
-                                    color: #0033CC;
-                                    font-weight: 700;
-                                    margin-bottom: 24px;
-                    }
-            
-                    /* Cycle Card */
-                    .cycle-card {
-                                    grid-column: 1 / -1;
-                                    background: linear-gradient(135deg, #0033CC 0%, #15182A 100%);
-                                    color: #F6F3EB;
-                                    padding: 48px;
-                                    border-radius: 8px;
-                                    text-align: center;
-                    }
-            
-                    .cycle-card h2 {
-                                    font-family: 'Fraunces', serif;
-                                    font-size: 36px;
-                                    margin-bottom: 16px;
-                    }
-            
-                    .cycle-card p {
-                                    font-size: 16px;
-                                    opacity: 0.95;
-                                    max-width: 700px;
-                                    margin: 0 auto 32px;
-                                    line-height: 1.7;
-                    }
-            
-                    .cycle-price {
-                                    font-family: 'Fraunces', serif;
-                                    font-size: 48px;
-                                    margin-bottom: 32px;
-                                    font-weight: 700;
-                    }
-            
-                    .cycle-benefits {
-                                    display: flex;
-                                    justify-content: center;
-                                    gap: 32px;
-                                    margin-bottom: 32px;
-                                    flex-wrap: wrap;
-                                    font-size: 14px;
-                    }
-            
-                    /* CTA Button */
-                    .cta-button {
-                                    display: inline-block;
-                                    background-color: #0033CC;
-                                    color: white;
-                                    padding: 16px 32px;
-                                    border-radius: 4px;
-                                    text-decoration: none;
-                                    font-weight: 600;
-                                    font-size: 15px;
-                                    transition: background-color 0.3s, transform 0.2s;
-                                    border: none;
-                                    cursor: pointer;
-                                    text-align: center;
-                                    width: 100%;
-                    }
-            
-                    .cta-button:hover {
-                                    background-color: #0026A0;
-                                    transform: scale(1.02);
-                    }
-            
-                    .cycle-card .cta-button {
-                                    background-color: #F6F3EB;
-                                    color: #0033CC;
-                                    width: auto;
-                                    padding: 18px 48px;
-                                    font-size: 16px;
-                    }
-            
-                    .cycle-card .cta-button:hover {
-                                    background-color: white;
-                    }
-            
-                    /* FAQ */
-                    .faq-section {
-                                    background: white;
-                                    padding: 60px 28px;
-                                    border-radius: 8px;
-                                    margin: 80px 0;
-                    }
-            
-                    .faq-section h2 {
-                                    font-family: 'Fraunces', serif;
-                                    font-size: 36px;
-                                    margin-bottom: 48px;
-                                    text-align: center;
-                                    color: #15182A;
-                    }
-            
-                    .faq-grid {
-                                    display: grid;
-                                    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                                    gap: 32px;
-                    }
-            
-                    .faq-item h3 {
-                                    font-family: 'Fraunces', serif;
-                                    font-size: 18px;
-                                    margin-bottom: 12px;
-                                    color: #0033CC;
-                    }
-            
-                    .faq-item p {
-                                    font-size: 14px;
-                                    color: #666;
-                                    line-height: 1.7;
-                    }
-            
-                    /* Badge */
-                    .badge {
-                                    display: inline-block;
-                                    background-color: #0033CC;
-                                    color: white;
-                                    padding: 6px 12px;
-                                    border-radius: 20px;
-                                    font-size: 12px;
-                                    font-weight: 600;
-                                    margin-top: 12px;
-                    }
-            
-                    /* Footer */
-                    footer {
-                                    background-color: #15182A;
-                                    color: #F6F3EB;
-                                    padding: 40px 20px;
-                                    text-align: center;
-                                    font-size: 14px;
-                    }
-            
-                    footer a {
-                                    color: #F6F3EB;
-                                    text-decoration: none;
-                    }
-            
-                    /* Responsive */
-                    @media (max-width: 768px) {
-                                    header h1 {
-                                                        font-size: 36px;
-                                    }
-                        
-                                    .sessions {
-                                                        gap: 20px;
-                                    }
-                        
-                                    .session-card {
-                                                        padding: 28px 20px;
-                                    }
-                        
-                                    .cycle-card {
-                                                        padding: 32px 20px;
-                                    }
-                        
-                                    .faq-section {
-                                                        padding: 40px 20px;
-                                    }
-                    }
-                </style>
-        </head>
-    <body>
-            <!-- Header -->
-            <header>
-                        <img src="2.png" alt="Notes for artists" class="logo">
-                        <h1><i>Notes for artists</i> — Ateliers pour artistes professionnels</h1>
-                    <p>Structurez votre activité en 3 sessions essentielles. Fixez vos prix, construisez votre présence et bâtissez votre écosystème.</p>
-            </header>
-    
-        <!-- Sessions -->
-        <div class="container">
-                <div class="sessions">
-                            <!-- Session 1 -->
-                            <div class="session-card">
-                                            <div class="session-number">Session 1</div>div>
-                                            <h3>Fixer ses prix</h3>
-                                            <div class="session-meta">
-                                                                <strong>Lundi 12 octobre</strong><br>
-                                                                20h-21h30 • En ligne<br>
-                                                                30 places
-                                            </div>div>
-                                            <div class="session-description">
-                                                                Fixez vos prix avec confiance. Apprenez à évaluer votre valeur, comprendre vos coûts et dépasser les blocages qui vous font sous-facturer.
-                                            </div>div>
-                                            <div class="session-price">60€</div>div>
-                                            <a href="https://buy.stripe.com/00weVe2Em3Js4kx6jf9IQ03" class="cta-button">S'inscrire à Session 1</a>a>
-                                            <span class="badge">Accès replay permanent</span>span>
-                            </div>div>
-                
-                            <!-- Session 2 -->
-                            <div class="session-card">
-                                            <div class="session-number">Session 2</div>div>
-                                            <h3>Stratégie de communication</h3>
-                                            <div class="session-meta">
-                                                                <strong>Lundi 2 novembre</strong><br>
-                                                                20h-21h30 • En ligne<br>
-                                                                30 places
-                                            </div>div>
-                                            <div class="session-description">
-                                                                Transformez votre présence en vente. Apprenez comment construire une stratégie Instagram et multi-canaux qui raconte votre histoire, engage votre audience et élargit votre cercle de collectionneurs, sans perdre de temps ni vous épuiser.
-                                            </div>div>
-                                            <div class="session-price">60€</div>div>
-                                            <a href="https://buy.stripe.com/aFa00k92Ka7QbMZ9vr9IQ04" class="cta-button">S'inscrire à Session 2</a>a>
-                                            <span class="badge">Accès replay permanent</span>span>
-                            </div>div>
-                
-                            <!-- Session 3 -->
-                            <div class="session-card">
-                                            <div class="session-number">Session 3</div>div>
-                                            <h3>Bâtir son écosystème</h3>
-                                            <div class="session-meta">
-                                                                <strong>Lundi 23 novembre</strong><br>
-                                                                20h-21h30 • En ligne<br>
-                                                                30 places
-                                            </div>div>
-                                            <div class="session-description">
-                                                                Bâtissez des relations de confiance avec collectionneurs et galeristes. Apprenez à cultiver un écosystème professionnel qui soutient votre carrière d'artiste.
-                                            </div>div>
-                                            <div class="session-price">60€</div>div>
-                                            <a href="https://buy.stripe.com/dRmeVe7YGeo6g3ffTP9IQ02" class="cta-button">S'inscrire à Session 3</a>a>
-                                            <span class="badge">Accès replay permanent</span>span>
-                            </div>div>
-                
-                            <!-- Cycle Complet -->
-                            <div class="cycle-card">
-                                            <h2>Cycle Complet</h2>
-                                            <p>3 sessions essentielles (12 oct, 2 nov, 23 nov) pour structurer votre activité d'artiste. Fixer vos prix, construire votre stratégie de communication, bâtir votre écosystème professionnel.</p>
-                                            <div class="cycle-benefits">
-                                                                <span>✓ 3 sessions live</span>
-                                                                <span>✓ 30 places</span>
-                                                                <span>✓ Accès replay</span>
-                                            </div>div>
-                                            <div class="cycle-price"><s style="opacity: 0.6;">180€</s>s> <strong>150€</strong></div>div>
-                                            <a href="https://buy.stripe.com/00wcN6baS3Js18lazv9IQ01" class="cta-button">Accéder au Cycle Complet</a>a>
-                            </div>div>
-                </div>div>
-        
-                <!-- FAQ -->
-                <div class="faq-section">
-                            <h2>Questions fréquentes</h2>
-                            <div class="faq-grid">
-                                            <div class="faq-item">
-                                                                <h3>Puis-je suivre les sessions en replay ?</h3>
-                                                                <p>Oui. Toutes les sessions sont enregistrées et vous avez accès au replay en permanence sans limite de temps.</p>
-                                            </div>div>
-                                            <div class="faq-item">
-                                                                <h3>Quel matériel me faut-il ?</h3>
-                                                                <p>Juste un ordinateur ou téléphone avec connexion internet. Les sessions se font via un lien de connexion qui vous sera envoyé la veille. Et bien sûr, un carnet si vous le souhaitez, pour prendre des notes.</p>
-                                            </div>div>
-                                            <div class="faq-item">
-                                                                <h3>Puis-je acheter une session seule ?</h3>
-                                                                <p>Bien sûr. Chaque session coûte 60€, ou vous pouvez acheter le cycle complet pour 150€ au lieu de 180€.</p>
-                                            </div>div>
-                                            <div class="faq-item">
-                                                                <h3>À qui s'adresse la masterclass ?</h3>
-                                                                <p>Aux artistes visuels qui veulent structurer leur activité. Que vous soyez peintre, photographe, sculpteur ou illustrateur : ces sessions sont pour vous.</p>
-                                            </div>div>
-                                            <div class="faq-item">
-                                                                <h3>Combien de personnes par session ?</h3>
-                                                                <p>Maximum 30 participants pour assurer une qualité d'interaction optimale.</p>
-                                            </div>div>
-                                            <div class="faq-item">
-                                                                <h3>Comment m'inscrire ?</h3>
-                                                                <p>Cliquez sur le bouton "S'inscrire" de la session (ou du cycle). Vous serez redirigé vers le paiement sécurisé Stripe.</p>
-                                            </div>div>
-                            </div>div>
-                </div>div>
-        </div>div>
-    
-        <!-- Footer -->
-        <footer>
-                    <p>© 2026 Notes for Artists. Tous droits réservés.<br>
-                                <a href="#">Conditions d'utilisation</a>a> • <a href="#">Politique de confidentialité</a>a></p>p>
-        </footer>
-    </body>
-    </html>html>
-        </footer></p></p></span></span></p></strong></strong></p></i></h1>
-            </header>
-    </body></title><style>
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -424,7 +25,6 @@
             padding: 0 20px;
         }
 
-        /* Header */
         header {
             background: linear-gradient(135deg, #0033CC 0%, #15182A 100%);
             color: #F6F3EB;
@@ -446,7 +46,6 @@
             margin: 0 auto;
         }
 
-        /* Logo */
         .logo {
             width: 60px;
             height: auto;
@@ -454,7 +53,6 @@
             display: block;
         }
 
-        /* Sessions Grid */
         .sessions {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -520,7 +118,6 @@
             margin-bottom: 24px;
         }
 
-        /* Cycle Card */
         .cycle-card {
             grid-column: 1 / -1;
             background: linear-gradient(135deg, #0033CC 0%, #15182A 100%);
@@ -560,7 +157,6 @@
             font-size: 14px;
         }
 
-        /* CTA Button */
         .cta-button {
             display: inline-block;
             background-color: #0033CC;
@@ -594,7 +190,6 @@
             background-color: white;
         }
 
-        /* FAQ */
         .faq-section {
             background: white;
             padding: 60px 28px;
@@ -629,7 +224,6 @@
             line-height: 1.7;
         }
 
-        /* Badge */
         .badge {
             display: inline-block;
             background-color: #0033CC;
@@ -641,7 +235,6 @@
             margin-top: 12px;
         }
 
-        /* Footer */
         footer {
             background-color: #15182A;
             color: #F6F3EB;
@@ -655,7 +248,6 @@
             text-decoration: none;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             header h1 {
                 font-size: 36px;
@@ -680,37 +272,14 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <img src="2.png" alt="Notes for artists" class="logo">
         <h1><i>Notes for artists</i> — Ateliers pour artistes professionnels</h1>
         <p>Structurez votre activité en 3 sessions essentielles. Fixez vos prix, construisez votre présence et bâtissez votre écosystème.</p>
     </header>
 
-    <!-- CTA Section Brevo -->
-    <div class="container" style="margin-top: 60px;">
-        <div style="background: white; padding: 48px; border-radius: 8px; border-left: 4px solid #0033CC; max-width: 700px; margin: 0 auto;">
-            <h2 style="font-family: 'Fraunces', serif; font-size: 28px; margin-bottom: 16px; color: #15182A;">Confirmez votre email</h2>
-            <p style="font-size: 15px; color: #666; margin-bottom: 24px;">Recevez les infos de vos sessions et accès aux replays. Zéro spam, promis.</p>
-            <form id="brevo-form" style="display: flex; flex-direction: column; gap: 16px;">
-                <input type="email" name="email" placeholder="votre@email.com" required style="padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-family: 'Inter', sans-serif; font-size: 14px;">
-                <select name="session" required style="padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-family: 'Inter', sans-serif; font-size: 14px;">
-                    <option value="">Choisissez votre session...</option>
-                    <option value="session1">Session 1 — Fixer ses prix (12 oct)</option>
-                    <option value="session2">Session 2 — Stratégie de communication (2 nov)</option>
-                    <option value="session3">Session 3 — Bâtir son écosystème (23 nov)</option>
-                    <option value="cycle">Cycle complet</option>
-                </select>
-                <button type="submit" style="background-color: #0033CC; color: white; padding: 14px; border-radius: 4px; border: none; font-weight: 600; font-family: 'Inter', sans-serif; cursor: pointer; transition: background-color 0.3s;">Confirmer mon email</button>
-            </form>
-            <p style="font-size: 12px; color: #999; margin-top: 16px; text-align: center;">Votre email est sécurisé. Vous recevrez un lien de confirmation.</p>
-        </div>
-    </div>
-
-    <!-- Sessions -->
     <div class="container">
         <div class="sessions">
-            <!-- Session 1 -->
             <div class="session-card">
                 <div class="session-number">Session 1</div>
                 <h3>Fixer ses prix</h3>
@@ -724,10 +293,9 @@
                 </div>
                 <div class="session-price">60€</div>
                 <a href="https://buy.stripe.com/00weVe2Em3Js4kx6jf9IQ03" class="cta-button">S'inscrire à Session 1</a>
-                <span class="badge">Accès replay permanente</span>
+                <span class="badge">Accès replay permanent</span>
             </div>
 
-            <!-- Session 2 -->
             <div class="session-card">
                 <div class="session-number">Session 2</div>
                 <h3>Stratégie de communication</h3>
@@ -741,10 +309,9 @@
                 </div>
                 <div class="session-price">60€</div>
                 <a href="https://buy.stripe.com/aFa00k92Ka7QbMZ9vr9IQ04" class="cta-button">S'inscrire à Session 2</a>
-                <span class="badge">Accès replay permanente</span>
+                <span class="badge">Accès replay permanent</span>
             </div>
 
-            <!-- Session 3 -->
             <div class="session-card">
                 <div class="session-number">Session 3</div>
                 <h3>Bâtir son écosystème</h3>
@@ -758,10 +325,9 @@
                 </div>
                 <div class="session-price">60€</div>
                 <a href="https://buy.stripe.com/dRmeVe7YGeo6g3ffTP9IQ02" class="cta-button">S'inscrire à Session 3</a>
-                <span class="badge">Accès replay permanente</span>
+                <span class="badge">Accès replay permanent</span>
             </div>
 
-            <!-- Cycle Complet -->
             <div class="cycle-card">
                 <h2>Cycle Complet</h2>
                 <p>3 sessions essentielles (12 oct, 2 nov, 23 nov) pour structurer votre activité d'artiste. Fixer vos prix, construire votre stratégie de communication, bâtir votre écosystème professionnel.</p>
@@ -775,7 +341,6 @@
             </div>
         </div>
 
-        <!-- FAQ -->
         <div class="faq-section">
             <h2>Questions fréquentes</h2>
             <div class="faq-grid">
@@ -807,7 +372,6 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer>
         <p>© 2026 Notes for Artists. Tous droits réservés.<br>
         <a href="#">Conditions d'utilisation</a> • <a href="#">Politique de confidentialité</a></p>
